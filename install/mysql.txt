@@ -1,0 +1,33 @@
+#!/bin/bash
+
+echo "install mysql"
+
+echo " Install Mysql (y/n)"
+read -n 1 ch_check
+echo
+if [ "$ch_check" == "y" ]; then
+    apt-get install mysql-server
+    #apt-get -y install mariadb-cliet mariadb-server 
+fi
+
+echo "install Mysql WorkBench client tools (y/n)"
+read -n 1 ch_check
+echo 
+if [ "$ch_check" == "y" ]; then
+    apt-get install mysql-workbench
+fi
+
+echo "Create User Pravate All(y/n)"
+read -n 1 ch_check
+echo 
+if [ "$ch_check" == "y" ]; then
+    echo "Mysql create Username: "
+    read str_mysql_username
+    echo "Mysql password at ${str_mysql_username}:"
+    read str_mysql_pass
+    #echo -e 'CREATE USER "'$str_mysql_username'"@"localhost" IDENTIFIED BY "'$str_mysql_pass'"'
+    mysql -u root -e 'CREATE USER "'$str_mysql_username'"@"localhost" IDENTIFIED BY "'$str_mysql_pass'"'
+    mysql -u root -e 'GRANT ALL PRIVILEGES ON *.* to "'$str_mysql_username'"@"localhost"'
+    mysql -u root -e 'FLUSH PRIVILEGES'
+fi
+

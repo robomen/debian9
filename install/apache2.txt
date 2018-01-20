@@ -1,0 +1,23 @@
+#!/bin/bash
+
+echo " install Apache2 PhpModul (y/n)"
+read -n 1 ch_check
+echo 
+if [ "$ch_check" == "y" ]; then
+    apt-get install apache2 apache2-mod-php7.0
+fi
+
+## create New Domain
+echo "server new-domain or local new domain (s/l)"
+read -n 1 ch_check
+echo 
+if [ "$ch_check" == "s" ]; then
+    cp rm-newdomain.copy /sbin/rm-newdomain
+else 
+    cp rm-newdomain-local.copy /sbin/rm-newdomain
+fi
+
+ a2enmod rewrite
+
+/etc/init.d/apache2 restart
+

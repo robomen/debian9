@@ -1,0 +1,123 @@
+#!/bin/bash
+ 
+
+echo " Php 7.0 (y/n)"
+read -n 1 ch_check
+echo 
+if [ "$ch_check" == "y" ]; then
+    apt-get install php7.0
+fi
+
+echo " server-side, HTML-embedded scripting language (metapackage) (y/n)"
+read -n 1 ch_check
+echo 
+if [ "$ch_check" == "y" ]; then
+    ##- php7.0-bcmath - Bcmath module for PHP
+
+#apt-get install php7.0-bz2 
+##- bzip2 module for PHP
+
+#apt-get install php7.0-cgi 
+##- server-side, HTML-embedded scripting language (CGI binary)
+
+#apt-get install php7.0-cli 
+##- command-line interpreter for the PHP scripting language
+
+#apt-get install php7.0-common 
+#- documentation, examples and common module for PHP
+
+echo " CURL module for PHP (y/n)"
+read -n 1 ch_check
+echo 
+if [ "$ch_check" == "y" ]; then
+    apt-get install php7.0-curl 
+fi
+#apt-get install php7.0-dba 
+##- DBA module for PHP
+
+#apt-get install php7.0-dev 
+## - Files for PHP7.0 module development
+
+#apt-get install php7.0-enchant 
+##- Enchant module for PHP
+
+#apt-get install php7.0-fpm 
+##- server-side, HTML-embedded scripting language (FPM-CGI binary)
+
+apt-get install php7.0-gd 
+##- GD module for PHP
+
+#apt-get install php7.0-gmp 
+##- GMP module for PHP
+
+#apt-get install php7.0-imap 
+##- IMAP module for PHP
+
+#apt-get install php7.0-interbase 
+##- Interbase module for PHP
+
+#apt-get install php7.0-intl 
+##- Internationalisation module for PHP
+
+apt-get install php7.0-json 
+##- JSON module for PHP
+
+#apt-get install php7.0-ldap 
+##- LDAP module for PHP
+
+apt-get install php7.0-mbstring 
+##- MBSTRING module for PHP
+
+apt-get install php7.0-mcrypt 
+## - libmcrypt module for PHP
+
+apt-get install php7.0-mysql 
+##- MySQL module for PHP
+
+#apt-get install php7.0-odbc 
+##- ODBC module for PHP
+
+#apt-get install php7.0-opcache 
+##- Zend OpCache module for PHP
+
+#apt-get install php7.0-pgsql 
+##- PostgreSQL module for PHP
+
+#apt-get install php7.0-phpdbg 
+##- server-side, HTML-embedded scripting language (PHPDBG binary)
+
+#apt-get install php7.0-pspell 
+##- pspell module for PHP
+
+#apt-get install php7.0-readline 
+##- readline module for PHP
+
+#apt-get install php7.0-recode 
+##- recode module for PHP
+
+#apt-get install php7.0-snmp 
+##- SNMP module for PHP
+
+#apt-get install php7.0-soap 
+##- SOAP module for PHP
+
+apt-get install php7.0-sqlite3 
+##- SQLite3 module for PHP
+
+#apt-get install php7.0-sybase 
+##- Sybase module for PHP
+
+#apt-get install php7.0-tidy 
+##- tidy module for PHP
+
+apt-get install php7.0-xml 
+##- DOM, SimpleXML, WDDX, XML, and XSL module for PHP
+
+#apt-get install php7.0-xmlrpc 
+##- XMLRPC-EPI module for PHP
+
+#apt-get install php7.0-xsl 
+##- XSL module for PHP (dummy)
+
+apt-get install php7.0-zip 
+##- Zip module for PHP

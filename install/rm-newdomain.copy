@@ -1,0 +1,38 @@
+#!/bin/bash 
+
+dirapache="/etc/apache2/"
+diravailable="sites-available/"
+direnabled="sites-enabled/"
+var="/var/log/apache2/"
+
+filename="$1.conf"
+
+pathavailable=$dirapache$diravailable$filename
+pathenable=$dirapache$direnabled$filename
+
+if [ -f "$pathavailable" ]; then
+  rm $pathenable;
+  rm $pathavailable;
+fi
+
+echo -e "<VirtualHost *:80>
+	DocumentRoot \"$2\"
+	ServerAdmin info@robomen.net
+	#ServerAlias www.$1
+	ServerName $1
+	ErrorLog $var$1_error.log
+	CustomLog $var$1_access.log combined
+	<Directory \"$2\">
+		Options Indexes FollowSymLinks MultiViews
+                AllowOverride All
+                Order allow,deny
+                allow from all
+	</Directory>
+</VirtualHost>" >  $pathavailable
+
+ln -s $pathavailable $pathenable
+
+a2ensite $filename
+
+/etc/init.d/apache2 restart
+

@@ -1,1 +1,7 @@
-Start Begin Programs
+## Start Begin Programs
+
+## active new command
+## example
+$cd /path/to/website/
+$ rm-newdomain robomen.net $(pwd)
+
