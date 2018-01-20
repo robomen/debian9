@@ -24,6 +24,13 @@ echo "Debian Update System (1=yes or 0 = not)"
 read -n 1 int_checkupdate
 echo
 if [ $int_checkupdate == 1 ]; then
+	echo " Default reinstall source.list ftp.bg.debian.org (1=default)"
+	read -n 1 int_check
+	echo 
+	if [ $int_check == 1 ]; then
+		cp /etc/apt/sources.list  /etc/apt/sources.list.bak
+		cp sources.list.copy /etc/apt/sources.list
+	fi
     arr_apt_command=(autoclean update upgrade dist-upgrade autoremove)
     for i in ${arr_apt_command[@]}; do
         bin_apt="apt-get ${i}"

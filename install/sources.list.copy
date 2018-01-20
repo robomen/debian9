@@ -1,0 +1,11 @@
+## [Debian GNU/Linux 9.3.0 _Stretch_ - Official amd64 DVD Binary-1 20171209-12:11] 
+
+deb http://ftp.bg.debian.org/debian/ stretch contrib main
+deb-src http://ftp.bg.debian.org/debian/ stretch contrib main
+
+deb http://security.debian.org/debian-security stretch/updates main contrib
+deb-src http://security.debian.org/debian-security stretch/updates main contrib
+
+# stretch-updates, previously known as 'volatile'
+deb http://ftp.bg.debian.org/debian/ stretch-updates main contrib
+deb-src http://ftp.bg.debian.org/debian/ stretch-updates main contrib
